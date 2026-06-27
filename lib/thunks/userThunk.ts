@@ -24,13 +24,13 @@ export const loginUser = createAsyncThunk(
 
 export const getUserChats = createAsyncThunk("user/chats", async () => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_CHAT_API}/api/chats`, {
+    const res  = await fetch(`${process.env.NEXT_PUBLIC_CHAT_API}/api/chats`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
         token: localStorage.getItem("token"),
       },
-    });
+    } as any);
     const data = await res.json();
     return data;
   } catch (error) {
@@ -50,7 +50,7 @@ export const searchUsers = createAsyncThunk(
             "Content-Type": "application/json",
             token: localStorage.getItem("token"),
           },
-        },
+        } as any,
       );
       const data = await res.json();
       console.log("search", data);
@@ -73,7 +73,7 @@ export const getUserChat = createAsyncThunk(
             "Content-Type": "application/json",
             token: localStorage.getItem("token"),
           },
-        },
+        } as any,
       );
       const data = await res.json();
       console.log(data);

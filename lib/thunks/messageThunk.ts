@@ -14,7 +14,7 @@ export const messagesOfChat = createAsyncThunk(
             "Content-Type": "application/json",
             token: localStorage.getItem("token"),
           },
-        },
+        } as any,
       );
       const data = await res.json();
       console.log("get messages", data);
@@ -37,7 +37,7 @@ export const createChat = createAsyncThunk(
           token: localStorage.getItem("token"),
         },
         body: JSON.stringify({ id: userId }),
-      });
+      } as any);
       const data = await res.json();
       console.log("create chat", data);
       thunkAPI.dispatch(getUserChats())
