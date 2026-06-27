@@ -43,7 +43,7 @@ const Chat = () => {
   };
   return (
     <div className="p-4 h-[100vh] flex flex-col">
-      <header className="mb-4 pb-3 border-b">
+      <header className="mb-4 pb-2 border-b">
         <Logo />
       </header>
       <div className="flex-1 overflow-y-auto mb-4">
@@ -53,7 +53,7 @@ const Chat = () => {
         <textarea
           ref={textareaRef}
           rows={1}
-          className=" border-none focus:outline-none w-full max-h-[300px] min-h-[40px] resize-none overflow-y-auto block"
+          className="border-none focus:outline-none w-full max-h-[300px] min-h-[40px] resize-none overflow-y-auto block"
           value={message}
           onChange={handleChange}
         />
